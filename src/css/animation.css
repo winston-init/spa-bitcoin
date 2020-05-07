@@ -1,0 +1,21 @@
+.sticky {
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    color: #fff;
+    /* transition: .5s ease-out; */
+    z-index: 1000;
+    animation: slide-down .5s;
+}
+
+@keyframes slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(80%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
