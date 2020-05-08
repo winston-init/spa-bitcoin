@@ -17,6 +17,16 @@ a {
     text-decoration: none;
 }
 
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 html {
     height: auto;
     width: 100%;
@@ -137,4 +147,45 @@ section.about .text {
 
 section.about img {
     width: 30%;
+}
+
+section.convert-btc {
+    padding-bottom: 10em;
+}
+
+.input-currency {
+    width: 350px;
+    height: 55px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-currency > #input-currency {
+    border: none;
+    /* border: 1px solid #c7c6c6; */
+    min-width: 20px;
+    max-width: 250px;
+    height: 80%;
+    font-size: 1.8rem;
+    margin-right: 5px;
+    background-color: transparent;
+    outline: none;
+    font-style: italic;
+    color: #333;
+    box-sizing: border-box;
+    padding: .3em 0em;
+}
+
+.input-currency > .currency-symbol-wrapper {
+    height: 47%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.input-currency .currency-symbol {
+    font-size: .9rem;
+    font-style: italic;
+    cursor: default;
 }
