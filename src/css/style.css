@@ -103,12 +103,11 @@ section.home > img {
 }
 
 .arrow {
-    content: '';
     display: block;
     position: absolute;
     bottom: 2.5em;
-    width: 2%;
-    height: 4%;
+    width: 25px;
+    height: 25px;
     border-bottom: 2px solid #333;
     border-right: 2px solid #333;
     transform: rotate(45deg);
@@ -117,7 +116,7 @@ section.home > img {
 
 section.about {
     margin-top: 2em;
-    padding-top: 7em;
+    padding-top: 6em;
 }
 
 section.about > .what-is,
