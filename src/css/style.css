@@ -46,6 +46,7 @@ body {
 
 header {
     height: 11vh;
+    min-height: 65px;
 }
 
 nav {
@@ -112,7 +113,7 @@ section.home > img {
     width: 20%;
 }
 
-.arrow {
+.scroll-arrow {
     display: block;
     position: absolute;
     bottom: 2.5em;
@@ -150,16 +151,22 @@ section.about img {
 }
 
 section.convert-btc {
+    padding: 0 9em;
     padding-bottom: 10em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 .currency {
     width: 350px;
-    height: 55px;
+    height: 50px;
     border: 1px solid #ccc;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    position: relative;
 }
 
 .currency > #input-currency,
@@ -168,7 +175,7 @@ section.convert-btc {
     min-width: 20px;
     text-align: center;
     max-width: 250px;
-    height: 80%;
+    height: 100%;
     font-size: 1.8rem;
     margin-right: 5px;
     background-color: transparent;
@@ -176,19 +183,79 @@ section.convert-btc {
     font-style: italic;
     color: #333;
     box-sizing: border-box;
-    padding: .3em 0em;
+    /* padding: .3em 0em; */
+    padding: 0;
 }
 
 .currency > .currency-symbol-wrapper {
-    height: 47%;
+    height: 100%;
     display: flex;
-    align-items: flex-end;
+    width: 25%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #f2a900;
+    color: #f0f0f0;
 }
 
 .currency .currency-symbol {
-    font-size: .9rem;
-    font-style: italic;
-    cursor: default;
-    width: 30px;
+    font-size: 1.3rem;
+    /* font-style: italic; */
+    cursor: inherit;
     text-align: center;
+    margin-right: 3px;
+    font-weight: 600;
+}
+
+.currency .select-currency-container {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    width: 25%;
+    bottom: -113px;
+}
+
+.select-currency-container.show {
+    display: block;
+}
+
+.select-currency-container > li {
+    width: 100%;
+    height: 35px;
+    display: flex;
+    font-size: 1.2rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+}
+
+.select-currency-container > li:last-child {
+    border: none;
+}
+
+.arrow-down:before {
+    content: '▲';
+    display: block;
+    position: relative;
+    top: 1px;
+    transform: rotate(180deg);
+}
+
+.switch-order {
+    border: none;
+    background-color: #00bfa6;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    outline: none;
+}
+
+.switch-order > img {
+    width: 75%;
 }
