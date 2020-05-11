@@ -32,7 +32,7 @@
             <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, nesciunt quidem consequatur a id assumenda maxime, eaque magni et ab natus fugit! Atque repudiandae libero in alias corrupti eaque dolorem.</p>
             <img src="assets/images/undraw_bitcoin2_ave7.svg" alt="">
             <a href="#about">
-                <span class="arrow"></span>
+                <span class="scroll-arrow"></span>
             </a>
         </section>
         <section class="about" id="about">
@@ -59,17 +59,26 @@
                 <!-- js max character -->
                 <div class="currency-symbol-wrapper">
                     <div class="currency-symbol">USD</div>
+                    <div class="arrow-down"></div>
                 </div>
+                <ul class="select-currency-container">
+                    <li>USD</li>
+                    <li>BRL</li>
+                    <li>BTC</li>
+                </ul>
             </div>
             <!-- convert settings -->
             <div>
-                <!-- <button>GO</button> -->
+                <button class="switch-order">
+                    <img src="assets/icons/sync_alt-black-18dp.svg" alt="">
+                </button>
             </div>
             <!-- output currency-->
             <div class="currency">
                 <input type="number" id="output-currency">
                 <div class="currency-symbol-wrapper">
                     <div class="currency-symbol">BRL</div>
+                    <div class="arrow-down"></div>
                 </div>
             </div>
         </section>
