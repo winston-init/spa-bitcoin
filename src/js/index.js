@@ -1,26 +1,26 @@
 'use strict'
 
-// sticky animation
-const arrow = document.querySelector('.scroll-arrow')
-const header = document.querySelector('header')
+import stickyHeader from './animation.js'
+import interfaceUI from './ui.js'
 
-window.addEventListener('scroll', (e) => {
-  if (scrollY >= 650) header.classList.add('sticky')
-  else header.classList.remove('sticky')
-})
+const animation = stickyHeader()
+const ui = interfaceUI()
 
-arrow.addEventListener('click', () => {
-  header.classList.add('sticky')
-})
+ui.dropdownFirstCurrency()
+ui.dropdownSecondCurrency()
+
+animation.scrollWindow()
+animation.clickToScroll()
 
 // Output logic
 const inputCurrency = document.querySelector('#input-currency')
 const outputCurrency = document.querySelector('#output-currency')
 
 function calculateOutput() {
-  const newValue = inputCurrency.value * 5.48
+  const newValue = inputCurrency.value * 0.00012
 
-  outputCurrency.value = newValue.toFixed(2)
+  if (newValue.toString().length >= 10) outputCurrency.value = newValue.toFixed(14)
+  else outputCurrency.value = newValue
 }
 
 calculateOutput()
@@ -50,22 +50,4 @@ resizeInput.call(outputCurrency)
 // initialize input with 0
 inputCurrency.value = 0;
 
-// show select currency
-const currencyDropdown = document.querySelector('.currency-symbol-wrapper')
-const currencySelect = document.querySelector('.select-currency-container')
-
-currencyDropdown.addEventListener('click', () => {
-  currencySelect.classList.toggle('show')
-})
-
-// select currency
-const currencySelectItem = document.querySelectorAll('.select-currency-container li')
-
-currencySelectItem.forEach(currency => {
-  currency.addEventListener('click', () => {
-    const currencySymbol = document.querySelector('.currency-symbol')    
-
-    currencySymbol.textContent = currency.textContent
-    currencySelect.classList.remove('show')
-  })
-})
+// animation switch order
