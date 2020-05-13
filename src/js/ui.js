@@ -1,18 +1,12 @@
 'use strict'
 
 function interfaceUI() {
-  const currency = {
-    firstCurrency: document.querySelector('.first-currency'),
-    secondCurrency: document.querySelector('.second-currency')
-  }
+  const dropdown = document.querySelector('.currency-symbol-wrapper')
+  const select = document.querySelector('.select-currency-container')
+  const currencySymbol = document.querySelector('.currency-symbol')
 
-  const { firstCurrency, secondCurrency } = currency
-
-  function selectCurrency(currency) {
-    const currencyItems = currency.querySelectorAll('.select-currency-container li')
-    const select = currency.querySelector('.select-currency-container')
-    const currencySymbol = currency.querySelector('.currency-symbol')
-
+  function selectCurrency() {
+    const currencyItems = document.querySelectorAll('.select-currency-container li')
 
     currencyItems.forEach(currencyItem => {
       currencyItem.addEventListener('click', () => {
@@ -22,51 +16,36 @@ function interfaceUI() {
     })
   }
 
-  function eventDropdown(currency) {
-    const dropdown = currency.querySelector('.currency-symbol-wrapper')
-    const select = currency.querySelector('.select-currency-container')
-
+  function eventDropdown() {
     dropdown.addEventListener('click', () => {
       if (dropdown.classList.contains('active')) {
         select.classList.toggle('show')
-        selectCurrency(currency)
+        selectCurrency()
       }
     })
   }
 
-  function dropdownFirstCurrency() {
-    eventDropdown(firstCurrency)
+  function toggleCurrency() {
+    const currencyBTC = document.querySelector('.result-symbol').textContent
+    const currencyDefault = currencySymbol.textContent
+
+    document.querySelector('.result-symbol').textContent = currencyDefault
+    currencySymbol.textContent = currencyBTC
+
+    dropdown.classList.toggle('active')
+    document.querySelector('.arrow-down').classList.toggle('show')
   }
 
-  function dropdownSecondCurrency() {
-    eventDropdown(secondCurrency)
-  }
+  function resizeDueChar() {
+    const inputCurrency = document.querySelector('#input-currency')
 
-  function activeDropdown(currency) {
-    currency.querySelector('.currency-symbol-wrapper').classList.toggle('active')
-    currency.querySelector('.select-currency-container').classList.toggle('active')
-  }
-
-  function toggleInput(currentCurrency, newCurrency) {
-    const content = {
-      newSymbol: newCurrency.querySelector('.currency-symbol').textContent,
-      currentSymbol: currentCurrency.querySelector(".currency-symbol").textContent
-    }
-
-    const { newSymbol, currentSymbol } = content
-
-    newCurrency.querySelector('.currency-symbol').textContent = currentSymbol
-    currentCurrency.querySelector('.currency-symbol').textContent = newSymbol
-
-    newCurrency.querySelector('.arrow-down').classList.add('show')
-    currentCurrency.querySelector('.arrow-down').classList.remove('show')
+    inputCurrency.style.width = inputCurrency.value.length + 'ch'
   }
 
   return {
-    dropdownFirstCurrency,
-    dropdownSecondCurrency,
-    activeDropdown,
-    toggleInput
+    eventDropdown,
+    toggleCurrency,
+    resizeDueChar
   }
 }
 
