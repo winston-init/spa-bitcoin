@@ -25,24 +25,10 @@ function stickyHeader() {
   function switchOrder() {
     const switchOrder = document.querySelector('.switch-order')
 
-    let count = 0
-
     switchOrder.addEventListener('click', () => {
       switchOrder.classList.add('animation')
 
-      const firstCurrency = document.querySelector('.first-currency')
-      const secondCurrency = document.querySelector('.second-currency')
-
-      count++
-
-      ui.activeDropdown(firstCurrency)
-      ui.activeDropdown(secondCurrency)
-
-      if (count % 2 === 1) {
-        ui.toggleInput(firstCurrency, secondCurrency)
-      } else if (count % 2 === 0) {
-        ui.toggleInput(secondCurrency, firstCurrency)
-      }
+      ui.toggleCurrency()
 
       setTimeout(() => {
         switchOrder.classList.remove('animation')
