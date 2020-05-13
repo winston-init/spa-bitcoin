@@ -54,17 +54,16 @@
         </section>
         <section class="convert-btc">
             <!-- Input currency -->
-            <div class="currency">
+            <div class="currency first-currency">
                 <input type="number" id="input-currency">
                 <!-- js max character -->
-                <div class="currency-symbol-wrapper">
+                <div class="currency-symbol-wrapper active">
                     <div class="currency-symbol">USD</div>
-                    <div class="arrow-down"></div>
+                    <div class="arrow-down show"></div>
                 </div>
-                <ul class="select-currency-container">
+                <ul class="select-currency-container active">
                     <li>USD</li>
                     <li>BRL</li>
-                    <li>BTC</li>
                 </ul>
             </div>
             <!-- convert settings -->
@@ -74,17 +73,21 @@
                 </button>
             </div>
             <!-- output currency-->
-            <div class="currency">
+            <div class="currency second-currency">
                 <input type="number" id="output-currency">
                 <div class="currency-symbol-wrapper">
-                    <div class="currency-symbol">BRL</div>
+                    <div class="currency-symbol">BTC</div>
                     <div class="arrow-down"></div>
                 </div>
+                <ul class="select-currency-container">
+                    <li>USD</li>
+                    <li>BRL</li>
+                </ul>
             </div>
         </section>
     </main>
 
     
-    <script src="js/index.js"></script>
+    <script type="module" src="js/index.js"></script>
 </body>
 </html>
