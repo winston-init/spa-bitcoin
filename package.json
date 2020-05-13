@@ -1,0 +1,24 @@
+{
+  "name": "spa-bitcoin",
+  "version": "1.0.0",
+  "description": "SPA with ajax about Bitcoin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/winston-init/spa-bitcoin.git"
+  },
+  "keywords": [
+    "bitcoin",
+    "spa",
+    "javascript"
+  ],
+  "author": "Matheus Oliveira",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/winston-init/spa-bitcoin/issues"
+  },
+  "homepage": "https://github.com/winston-init/spa-bitcoin#readme"
+}
