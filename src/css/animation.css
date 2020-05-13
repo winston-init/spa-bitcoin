@@ -4,7 +4,7 @@
     background-color: #333;
     color: #fff;
     /* transition: .5s ease-out; */
-    height: 10vh;
+    height: 9vh;
     z-index: 1000;
     animation: slide-down .4s ease-in;
 }
