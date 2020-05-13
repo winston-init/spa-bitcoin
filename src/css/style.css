@@ -154,6 +154,7 @@ section.convert-btc {
     padding: 0 9em;
     padding-bottom: 10em;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
@@ -167,17 +168,18 @@ section.convert-btc {
     align-items: center;
     justify-content: flex-end;
     position: relative;
+    margin-bottom: 3em;
 }
 
-.currency > #input-currency,
-.currency > #output-currency {
+.currency > #input-currency {
     border: none;
-    min-width: 20px;
-    text-align: center;
+    min-width: 30px;
+    width: 50px;
+    text-align: right;
     max-width: 250px;
     height: 100%;
     font-size: 1.8rem;
-    margin-right: 8px;
+    margin-right: 10px;
     background-color: transparent;
     outline: none;
     font-style: italic;
@@ -270,10 +272,27 @@ section.convert-btc {
 
 .switch-order > img {
     width: 75%;
+    transform: rotate(90deg)
 }
 
 .switch-order.animation {
     animation: rotateButton .8s;
+}
+
+.result {
+    margin-top: 1.5em;
+    display: flex;
+    height: auto;
+}
+
+.result-content {
+    font-size: 5rem;
+    margin-right: .1em;
+}
+
+.result-symbol {
+    align-self: center;
+    font-size: 1.5rem;
 }
 
 @keyframes rotateButton {
