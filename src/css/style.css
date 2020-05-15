@@ -215,7 +215,7 @@ section.convert-btc {
     background-color: #333;
     color: #fff;
     width: 25%;
-    bottom: -145%;
+    bottom: -105px;
     box-sizing: border-box;
     border-radius: 2px;
 }
