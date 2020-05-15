@@ -2,7 +2,10 @@
 
 function main() {
   function calculateInput() {
-    const url = 'https://api.coindesk.com/v1/bpi/currentprice/USD.json'
+    const currency = document.querySelector('.currency-symbol').textContent
+
+    const url = `https://api.coindesk.com/v1/bpi/currentprice/${currency}.json`
+    console.log(url)
 
     const inputCurrency = document.querySelector('#input-currency')
     const outputCurrency = document.querySelector('.result-content')
@@ -13,13 +16,14 @@ function main() {
 
     xhr.onload = function() {
       if (this.status == 200) {
-        const currency = JSON.parse(this.responseText)
+        const res = JSON.parse(this.responseText)
 
-        const worth = currency.bpi['USD'].rate
+        const worth = res.bpi[`${currency}`].rate
+        console.log(currency)
 
         const output = inputCurrency.value / parseFloat(worth.replace(',', ''))
 
-        if (output.toString().length > 5) outputCurrency.textContent = output.toFixed(5)
+        if (output.toString().length > 7) outputCurrency.textContent = output.toFixed(7)
         else outputCurrency.textContent = output
       }
     }
