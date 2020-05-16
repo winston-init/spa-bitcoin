@@ -1,8 +1,10 @@
 'use strict'
 
 import interfaceUI from './ui.js'
+import main from './app.js'
 
 const ui = interfaceUI()
+const app = main()
 
 function stickyHeader() {
   function scrollWindow() {
@@ -29,6 +31,7 @@ function stickyHeader() {
       switchOrder.classList.add('animation')
 
       ui.toggleCurrency()
+      app.calculateInput()
 
       setTimeout(() => {
         switchOrder.classList.remove('animation')
