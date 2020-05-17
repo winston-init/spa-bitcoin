@@ -6,14 +6,16 @@ import main from './app.js'
 const ui = interfaceUI()
 const app = main()
 
-function stickyHeader() {
+function animationUI() {
   function scrollWindow() {
     const header = document.querySelector('header')
-    
-    window.addEventListener('scroll', (e) => {
+
+    function holdStickyHeader(e) {
       if (scrollY >= window.innerHeight) header.classList.add('sticky')
       else header.classList.remove('sticky')
-    })
+    }
+
+    window.addEventListener('scroll', holdStickyHeader)
   }
 
   function clickToScroll() {
@@ -27,7 +29,7 @@ function stickyHeader() {
   function switchOrder() {
     const switchOrder = document.querySelector('.switch-order')
 
-    switchOrder.addEventListener('click', () => {
+    function holdSwitchOrder() {
       switchOrder.classList.add('animation')
 
       ui.toggleCurrency()
@@ -36,7 +38,9 @@ function stickyHeader() {
       setTimeout(() => {
         switchOrder.classList.remove('animation')
       }, 800)
-    })
+    }
+
+    switchOrder.addEventListener('click', holdSwitchOrder)
   }
 
   return {
@@ -46,4 +50,4 @@ function stickyHeader() {
   }
 }
 
-export default stickyHeader
+export default animationUI
