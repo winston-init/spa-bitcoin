@@ -1,5 +1,9 @@
 'use strict'
 
+import main from './app.js'
+
+const app = main()
+
 function interfaceUI() {
   const dropdown = document.querySelector('.currency-symbol-wrapper')
   const select = document.querySelector('.select-currency-container')
@@ -12,6 +16,7 @@ function interfaceUI() {
       currencyItem.addEventListener('click', () => {
         currencySymbol.textContent = currencyItem.textContent
         select.classList.remove('show')
+        app.calculateInput()
       })
     })
   }
