@@ -1,10 +1,10 @@
 'use strict'
 
-import stickyHeader from './animation.js'
+import animationUI from './animation.js'
 import interfaceUI from './ui.js'
 import main from './app.js'
 
-const animation = stickyHeader()
+const animation = animationUI()
 const ui = interfaceUI()
 const app = main()
 
