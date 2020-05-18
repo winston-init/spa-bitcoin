@@ -59,10 +59,18 @@ nav {
 }
 
 .navbar {
-    width: 28%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around
+    justify-content: space-around;
+    margin-right: 25px;
+}
+
+.navbar-item {
+    margin-right: 25px;
+}
+
+.navbar li:last-child {
+    margin-right: 0;
 }
 
 .btn {
@@ -135,6 +143,9 @@ section.about > .for-what {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+section.about > .what-is {
     padding-bottom: 5em;
 }
 
@@ -151,8 +162,7 @@ section.about img {
 }
 
 section.convert-btc {
-    padding: 0 9em;
-    padding-bottom: 10em;
+    padding: 8em 9em 10em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -165,8 +175,6 @@ section.convert-btc {
     position: relative;
     color: #4d4d4d;
 }
-
-
 
 .convert-btc .title::after {
     content: '';
@@ -293,7 +301,6 @@ section.convert-btc {
 
 .switch-order > img {
     width: 75%;
-    transform: rotate(90deg)
 }
 
 .switch-order.animation {
@@ -314,6 +321,92 @@ section.convert-btc {
 .result-symbol {
     align-self: center;
     font-size: 1.5rem;
+}
+
+footer {
+    height: 31vh;
+    background-color: #333;
+    display: flex;
+    color: #B4BCC4;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em 0 1.5em;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo > img {
+    width: 40px;
+    margin-right: 5px;
+}
+
+.logo {
+    font-size: 1.5rem;
+}
+
+.footer-nav > ul {
+    display: flex;
+}
+
+.footer-nav li {
+    margin-right: 50px;
+}
+
+.footer-nav li:last-child {
+    margin-right: 0;
+}
+
+.footer-nav a:hover {
+    color: #F3F9FA;
+}
+
+.footer-info {
+    display: flex;
+    width: 85%;
+    justify-content: space-between;
+}
+
+.footer-info .wrapper {
+    width: 33.3%;
+    display: flex;
+}
+
+.language-container {
+    justify-content: flex-start;
+}
+
+.social-media-container {
+    justify-content: center;
+}
+
+.copyright-container {
+    justify-content: flex-end;
+}
+
+.language,
+.social-medias {
+    display: inline-flex;
+}
+
+.social-medias li {
+    margin-right: 25px;
+}
+
+.social-medias li:last-child {
+    margin-right: 0;
+}
+
+.social-medias a:hover {
+    filter: invert(.8);
+}
+
+.social-medias img {
+    width: 25px;
 }
 
 @keyframes rotateButton {
