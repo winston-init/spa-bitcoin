@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/animation.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitcoin</title>
+    <title>Coinvert</title>
 </head>
 <body>
     <header>
@@ -16,13 +16,12 @@
                     <a href="">Account</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="">My List</a>
-                </li>
-                <li class="navbar-item">
-                    <a href="">Manage Trips</a>
+                    <a href="">Contact us</a>
                 </li>
             </ul>
-            <button class="btn btn-btc">Convert BTC</button>
+            <a href="#convert-btc">
+                <button class="btn btn-btc">Convert BTC</button>
+            </a>
         </nav>
     </header>
 
@@ -52,7 +51,7 @@
                 </div>
             </div>
         </section>
-        <section class="convert-btc">
+        <section class="convert-btc" id="convert-btc">
             <h1 class="title">Try convert some numbers</h1>
             <!-- Input currency -->
             <div class="currency">
@@ -72,7 +71,7 @@
             <!-- convert settings -->
             <div>
                 <button class="switch-order">
-                    <img src="assets/icons/sync_alt-black-18dp.svg" alt="">
+                    <img src="assets/icons/swap_vert-black-18dp.svg" alt="Swap currencies">
                 </button>
             </div>
 
@@ -83,6 +82,39 @@
             </div>
         </section>
     </main>
+    <footer>
+        <div class="footer-logo">
+            <img src="assets/icons/bitcoin_logo.svg" alt="Bitcoin icon">
+            <div class="logo">Coinvert</div>
+        </div>
+        <div class="footer-nav">
+            <ul>
+                <li><a href="#convert-btc">Convert currencies</a></li>
+                <li><a href="">Send an message</a></li>
+            </ul>
+        </div>
+        <div class="footer-info">
+            <div class="wrapper language-container">
+                <div class="language">English</div>
+            </div>
+            <div class="wrapper social-media-container">
+                <ul class="social-medias">
+                    <li>
+                        <a href="http://github.com/winston-init/spa-bitcoin" target="_blank" rel="noopener noreferrer"><img src="assets/icons/github_logo.svg" alt="Github"></a>
+                    </li>
+                    <li>
+                        <a href="facebook.com"><img src="assets/icons/fb_logo.svg" alt="Facebook"></a>
+                    </li>
+                    <li>
+                        <a href="twitter.com"><img src="assets/icons/twitter_logo.svg" alt="Twitter"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="wrapper copyright-container">
+                <span class="copyright">&copy; 2020 Coinvert. All rights reserved.<span>
+            </div>
+        </div>
+    </footer>
 
     
     <script type="module" src="js/index.js"></script>
