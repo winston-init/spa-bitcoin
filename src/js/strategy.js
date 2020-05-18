@@ -25,7 +25,11 @@ function nonCryptocurrency(api, currency) {
   worth = api.bpi[`${currency}`].rate 
   output = inputCurrency.value / parseFloat(worth.replace(',', ''))
 
-  if (output.toString().length > 7) outputCurrency.textContent = output.toFixed(7)
+  let floatSplited = output.toString().split('.')
+
+  if (floatSplited.length == 1) floatSplited.push("0")
+
+  if (output.toString().length > 7 && floatSplited[1] !== "0") outputCurrency.textContent = output.toFixed(7)
   else outputCurrency.textContent = output
 }
 
