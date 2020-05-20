@@ -8,12 +8,12 @@ function currencyStrategy(strategy, api, currency) {
   }
 }
 
-const inputCurrency = document.querySelector('#input-currency')
-const outputCurrency = document.querySelector('.result-content')
-
 let worth, output
 
 function cryptocurrency(api, currency) {
+  const inputCurrency = document.querySelector('#input-currency')
+  const outputCurrency = document.querySelector('.result-content')
+
   worth = api.bpi[`${currency}`].rate
   output = inputCurrency.value * parseFloat(worth.replace(',', ''))
 
@@ -22,6 +22,9 @@ function cryptocurrency(api, currency) {
 }
 
 function nonCryptocurrency(api, currency) {
+  const inputCurrency = document.querySelector('#input-currency')
+  const outputCurrency = document.querySelector('.result-content')
+
   worth = api.bpi[`${currency}`].rate 
   output = inputCurrency.value / parseFloat(worth.replace(',', ''))
 
