@@ -4,7 +4,7 @@ ul {
     padding: 0;
 }
 
-h1 {
+h1, h3 {
     margin: 0;
 }
 
@@ -77,7 +77,7 @@ nav {
     border: none;
     width: 115px;
     height: 35px;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
     font-size: .9rem;
 }
@@ -92,6 +92,7 @@ section {
 }
 
 main {
+    height: auto;
     width: 83%;
     margin-right: auto;
     margin-left: auto;
@@ -407,6 +408,53 @@ footer {
 
 .social-medias img {
     width: 25px;
+}
+
+.not-found-container {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 3em;
+    margin-bottom: 6em;
+    padding: 1em 0;
+    box-shadow: 2px 3px 15px #ccc;
+}
+
+.not-found-container .title {
+    font-size: 5rem;
+}
+
+.not-found-container .subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 1.5em;
+}
+
+.not-found-container .text {
+    width: 80%;
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+.btn-back {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2a900;
+    height: 40px;
+    color: #292929;
+    outline: 0;
+}
+
+.btn-back img {
+    margin-right: 5px;
+    width: 20px;
 }
 
 @keyframes rotateButton {
