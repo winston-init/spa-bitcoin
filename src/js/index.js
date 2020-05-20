@@ -1,28 +1,44 @@
 'use strict'
 
-import animationUI from './animation.js'
-import interfaceUI from './ui.js'
-import main from './app.js'
+import Home from './../views/pages/Home.js'
+import Contact from './../views/pages/Contact.js'
+import NotFound from './../views/pages/404.js'
 
-const animation = animationUI()
-const ui = interfaceUI()
-const app = main()
+import Navbar from './../views/components/NavBar.js'
+import Bottombar from './../views/components/BottomBar.js'
 
-ui.eventDropdown()
+import Utils from './../services/Utils.js'
 
-animation.scrollWindow()
-animation.clickToScroll()
-animation.switchOrder()
+const routes = {
+  '/' : Home,
+  '/contact' : Contact
+}
 
-const inputCurrency = document.querySelector('#input-currency')
-
-inputCurrency.value = 0;
-
-app.calculateInput()
-
-inputCurrency.addEventListener('input', () => {
-  app.calculateInput()
-  ui.resizeDueChar()
-})
+const router = async () => {
+  const header = null || document.querySelector('header')
+  const content = null || document.querySelector('main')
+  const footer = null || document.querySelector('footer')
 
 
+  header.innerHTML = await Navbar.render()
+  await Navbar.afterRender()
+  footer.innerHTML = await Bottombar.render()
+  await Bottombar.afterRender()
+
+
+  let request = Utils.parseRequestURL()
+
+
+  let parsedURL = (request.resource ? '/' + request.resource : '/')
+   + (request.id ? '/:id' : '')
+   + (request.verb ? '/' + request.verb : '')
+
+
+  let page = routes[parsedURL] ? routes[parsedURL] : NotFound
+  content.innerHTML = await page.render()
+  await page.afterRender()
+}
+
+window.addEventListener('hashchange', router)
+
+window.addEventListener('load', router)
