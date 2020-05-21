@@ -54,7 +54,6 @@ nav {
     justify-content: flex-end;
     align-items: center;
     height: 100%;
-    padding-right: 1.5em;
     box-sizing: border-box;
 }
 
@@ -80,6 +79,7 @@ nav {
     border-radius: 4px;
     cursor: pointer;
     font-size: .9rem;
+    font-family: inherit;
 }
 
 .btn-btc {
@@ -163,7 +163,7 @@ section.about img {
 }
 
 section.convert-btc {
-    padding: 8em 9em 10em;
+    padding: 8em 9em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -210,7 +210,6 @@ section.convert-btc {
     margin-right: 10px;
     background-color: transparent;
     outline: none;
-    font-style: italic;
     color: #333;
     box-sizing: border-box;
     font-style: normal;
@@ -226,7 +225,7 @@ section.convert-btc {
     justify-content: center;
     cursor: pointer;
     background-color: #f2a900;
-    color: #f0f0f0;
+    color: #292929;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
 }
@@ -324,7 +323,7 @@ section.convert-btc {
     font-size: 1.5rem;
 }
 
-footer {
+.footer {
     height: 31vh;
     background-color: #333;
     display: flex;
@@ -410,18 +409,31 @@ footer {
     width: 25px;
 }
 
+main.full-container {
+    width: 100vh;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header.no-display,
+footer.no-display {
+    display: none;
+}
+
 .not-found-container {
     width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid #ccc;
     margin-right: auto;
     margin-left: auto;
     margin-top: 3em;
     margin-bottom: 6em;
     padding: 1em 0;
     box-shadow: 2px 3px 15px #ccc;
+    border-radius: 3px;
 }
 
 .not-found-container .title {
@@ -440,7 +452,6 @@ footer {
 }
 
 .btn-back {
-    font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     margin-bottom: 2em;
     display: flex;
@@ -455,6 +466,58 @@ footer {
 .btn-back img {
     margin-right: 5px;
     width: 20px;
+}
+
+.contact-container {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em 1.5em 2.5em;
+    box-sizing: border-box;
+    margin: 2em auto 5em;
+    box-shadow: 1px 2px 5px #333;
+    border-radius: 3px;
+}
+
+.contact-container .title {
+    font-size: 1.5rem;
+}
+
+.contact-container .text {
+    text-align: center;
+    width: 90%;
+    margin-bottom: 2.5em;
+}
+
+.contact-container input,
+.contact-container textarea {
+    width: 80%;
+    height: 38px;
+    padding: 0;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    padding: 5px 8px;
+    border-radius: 3px;
+    border: 1px solid #f0f0f0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.contact-container textarea {
+    margin-bottom: 30px;
+    min-height: 120px;
+    resize: none;
+}
+
+.btn-send {
+    width: 80%;
+    height: 40px;
+    background-color: #f2a900;
+    font-size: 1rem;
+    color: #292929;
+    outline: 0;
 }
 
 @keyframes rotateButton {
