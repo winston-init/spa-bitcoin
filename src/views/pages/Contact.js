@@ -1,7 +1,16 @@
 const Contact = {
   render: async () => {
     const view = /* html */ `
-      <h1>Hello world</h1>
+      <div class="contact-container">
+        <h1 class="title">Send us a message</h1>
+        <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+        Lorem Ipsum has been.</p>
+        <input type="text" class="input" placeholder="Name" spellcheck="false">
+        <input type="email" class="input" placeholder="Email Address" spellcheck="false">
+        <input type="text" class="input" placeholder="Subject">
+        <textarea placeholder="Message"></textarea>
+        <button class="btn btn-send">Send</button>
+      </div>
     `
 
     return view
