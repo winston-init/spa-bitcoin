@@ -16,7 +16,11 @@ const NotFound = {
 
     return view
   },
-  afterRender: async () => { }
+  afterRender: async () => { 
+    document.querySelector('header').classList.add('no-display')
+    document.querySelector('footer').classList.add('no-display')
+    document.querySelector('main').classList.add('full-container')
+  }
 }
 
 export default NotFound
