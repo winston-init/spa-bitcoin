@@ -75,6 +75,10 @@ const Home = {
     return view
   }
   , afterRender: async () => {
+    document.querySelector('header').classList.remove('no-display')
+    document.querySelector('footer').classList.remove('no-display')
+    document.querySelector('main').classList.remove('full-container')
+
     const animation = animationUI()
     const ui = interfaceUI()
     const app = main()
