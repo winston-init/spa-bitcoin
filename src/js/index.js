@@ -19,6 +19,7 @@ const router = async () => {
   const content = null || document.querySelector('main')
   const footer = null || document.querySelector('footer')
 
+  window.scrollTo(0, 0)
 
   header.innerHTML = await Navbar.render()
   await Navbar.afterRender()
