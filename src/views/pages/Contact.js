@@ -9,13 +9,17 @@ const Contact = {
         <input type="email" class="input" placeholder="Email Address" spellcheck="false">
         <input type="text" class="input" placeholder="Subject">
         <textarea placeholder="Message"></textarea>
-        <button class="btn btn-send">Send</button>
+        <button class="btn btn-send">
+          <a href="/#/message">Send</a>
+        </button>
       </div>
     `
 
     return view
+  },
+  afterRender: async () => {
+    document.querySelector('footer').classList.remove('fixed-in-bottom')
   }
-  , afterRender: async () => { }
 }
 
 export default Contact
