@@ -24,12 +24,12 @@ const Bottombar = {
                         </a>
                     </li>
                     <li>
-                        <a href="facebook.com">
+                        <a href="http://facebook.com" target="_blank" rel="noopener noreferrer">
                           <img src="assets/icons/fb_logo.svg" alt="Facebook">
                         </a>
                     </li>
                     <li>
-                        <a href="twitter.com">
+                        <a href="http://twitter.com" target="_blank" rel="noopener noreferrer">
                           <img src="assets/icons/twitter_logo.svg" alt="Twitter">
                         </a>
                     </li>
