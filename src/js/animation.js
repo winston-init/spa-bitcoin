@@ -19,10 +19,13 @@ function animationUI() {
   }
 
   function clickToScroll() {
+    const header = document.querySelector('header')
+
     const arrow = document.querySelector('.scroll-arrow')
 
     arrow.addEventListener('click', () => {
       header.classList.add('sticky')
+      window.scrollTo(0, window.innerHeight + 20)
     })
   }
 
