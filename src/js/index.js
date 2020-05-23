@@ -2,6 +2,7 @@
 
 import Home from './../views/pages/Home.js'
 import Contact from './../views/pages/Contact.js'
+import MessageSent from './../views/pages/SentMessage.js'
 import NotFound from './../views/pages/404.js'
 
 import Navbar from './../views/components/NavBar.js'
@@ -11,7 +12,8 @@ import Utils from './../services/Utils.js'
 
 const routes = {
   '/' : Home,
-  '/contact' : Contact
+  '/contact' : Contact,
+  '/message' : MessageSent
 }
 
 const router = async () => {
