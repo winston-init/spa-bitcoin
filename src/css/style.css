@@ -499,7 +499,7 @@ footer.no-display {
     font-size: 1rem;
     padding: 5px 8px;
     border-radius: 3px;
-    border: 1px solid #f0f0f0;
+    border: 1px solid #c9c7c7;
     outline: none;
     box-sizing: border-box;
     font-family: inherit;
@@ -518,6 +518,22 @@ footer.no-display {
     font-size: 1rem;
     color: #292929;
     outline: 0;
+    padding: 0;
+}
+
+.btn-send a {
+    display: block;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer.fixed-in-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
 
 @keyframes rotateButton {
