@@ -73,11 +73,15 @@ const Home = {
     `
 
     return view
-  }
-  , afterRender: async () => {
+  },
+  afterRender: async () => {
+    const footer = document.querySelector('footer')
+    
     document.querySelector('header').classList.remove('no-display')
-    document.querySelector('footer').classList.remove('no-display')
+    footer.classList.remove('no-display')
     document.querySelector('main').classList.remove('full-container')
+
+    footer.classList.remove('fixed-in-bottom')
 
     const animation = animationUI()
     const ui = interfaceUI()
