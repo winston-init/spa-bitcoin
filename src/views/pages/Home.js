@@ -12,9 +12,7 @@ const Home = {
           consequatur aid assumenda maxime, eaque magni et ab natus fugit! Atque repudiandae libero in alias 
           corrupti eaque dolorem.</p>
           <img src="assets/images/undraw_bitcoin2_ave7.svg" alt="">
-          <a href="#about">
-              <span class="scroll-arrow"></span>
-          </a>
+          <span class="scroll-arrow"></span>
       </section>
       <section class="about" id="about">
           <div class="what-is">
