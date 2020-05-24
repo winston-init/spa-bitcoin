@@ -19,6 +19,7 @@ const Contact = {
   },
   afterRender: async () => {
     document.querySelector('footer').classList.remove('fixed-in-bottom')
+    document.querySelector('body').classList.remove('blocked')
   }
 }
 
