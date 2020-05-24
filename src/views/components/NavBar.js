@@ -13,15 +13,32 @@ const Navbar = {
                   <a href="/#/contact">Contact us</a>
               </li>
           </ul>
-          <!-- <a href="#convert-btc">
-              <button class="btn btn-btc">Convert BTC</button>
-          </a> -->
+          <div class="hamburguer-icon">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
       </nav>
     `
 
     return view
   },
-  afterRender: async () => { }
+  afterRender: async () => {
+    const hamburguerIcon = document.querySelector('.hamburguer-icon')
+
+    function openNavScreen() {
+      const navbar = document.querySelector('.navbar')
+      const body = document.querySelector('body')
+
+      navbar.classList.toggle('mobile')
+      hamburguerIcon.classList.toggle('close-mode')
+      body.classList.toggle('blocked')
+
+      console.log('event triggered')
+    }
+
+    hamburguerIcon.addEventListener('click', openNavScreen)
+  }
 
 }
 
