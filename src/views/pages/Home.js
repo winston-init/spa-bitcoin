@@ -5,7 +5,6 @@ import main from './../../js/app.js'
 const Home = {
   render: async () => {
     const view = /* html */`
-    <main>
       <section class="home">
           <h1 class="title">Conheça o mercado do Bitcoin</h1>
           <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, nesciunt quidem 
@@ -28,7 +27,6 @@ const Home = {
           </div>
 
           <div class="for-what">
-              <img src="assets/images/undraw_crypto_portfolio_2jy5.svg" alt="">
               <div class="content-container">
                   <h1 class="title">Para que serve?</h1>
                   <p class="text">A lógica da moeda digital é a mesma do dinheiro em espécie. Sua função é, basicamente, 
@@ -36,6 +34,7 @@ const Home = {
                   Soundcloud, já aceitam pagamento com criptomoeda. Outra possibilidade é a transferência de valores 
                   pela internet, sem a necessidade de taxas cobradas por instituições financeiras e bancárias.</p>
               </div>
+              <img src="assets/images/undraw_crypto_portfolio_2jy5.svg" alt="">
           </div>
       </section>
       <section class="convert-btc" id="convert-btc">
@@ -67,19 +66,19 @@ const Home = {
               <div class="result-symbol">BTC</div>
           </div>
       </section>
-    </main>
     `
 
     return view
   },
   afterRender: async () => {
     const footer = document.querySelector('footer')
-    
+
     document.querySelector('header').classList.remove('no-display')
     footer.classList.remove('no-display')
     document.querySelector('main').classList.remove('full-container')
 
     footer.classList.remove('fixed-in-bottom')
+    document.querySelector('body').classList.remove('blocked')
 
     const animation = animationUI()
     const ui = interfaceUI()
