@@ -7,48 +7,56 @@ const ui = interfaceUI()
 const app = main()
 
 function animationUI() {
-  function scrollWindow() {
-    const header = document.querySelector('header')
-
-    function holdStickyHeader(e) {
-      if (scrollY >= window.innerHeight) header.classList.add('sticky')
-      else header.classList.remove('sticky')
-    }
-
-    window.addEventListener('scroll', holdStickyHeader)
+  function animateSticky(element) {
+    element.classList.add('sticky')
   }
 
-  function clickToScroll() {
+  function unanimateSticky(element) {
+    element.classList.remove('sticky')
+  }
+
+  function showStickyHeader() {
     const header = document.querySelector('header')
 
+    window.addEventListener('scroll', () => {
+      scrollY >= window.innerHeight
+      ? animateSticky(header)
+      : unanimateSticky(header)
+    })
+  }
+
+  function animateScroll() {
+    window.scrollTo(0, window.innerHeight + 20)
+  }
+
+  function clickOnArrowToScroll() {
     const arrow = document.querySelector('.scroll-arrow')
 
-    arrow.addEventListener('click', () => {
-      header.classList.add('sticky')
-      window.scrollTo(0, window.innerHeight + 20)
-    })
+    arrow.addEventListener('click', animateScroll)
+  }
+
+  function animateSwitch(element) {
+    element.classList.add('animation')
+
+    setTimeout(() => {
+      element.classList.remove('animation')
+    }, 800)
   }
 
   function switchOrder() {
     const switchOrder = document.querySelector('.switch-order')
 
-    function holdSwitchOrder() {
-      switchOrder.classList.add('animation')
+    switchOrder.addEventListener('click', () => {
+      animateSwitch(switchOrder)
 
       ui.toggleCurrency()
       app.calculateInput()
-
-      setTimeout(() => {
-        switchOrder.classList.remove('animation')
-      }, 800)
-    }
-
-    switchOrder.addEventListener('click', holdSwitchOrder)
+    })
   }
 
   return {
-    scrollWindow,
-    clickToScroll,
+    showStickyHeader,
+    clickOnArrowToScroll,
     switchOrder
   }
 }

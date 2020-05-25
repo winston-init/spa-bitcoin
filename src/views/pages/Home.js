@@ -86,8 +86,8 @@ const Home = {
 
     ui.eventDropdown()
 
-    animation.scrollWindow()
-    animation.clickToScroll()
+    animation.showStickyHeader()
+    animation.clickOnArrowToScroll()
     animation.switchOrder()
 
     const inputCurrency = document.querySelector('#input-currency')

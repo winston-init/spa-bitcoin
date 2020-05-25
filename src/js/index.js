@@ -28,14 +28,9 @@ const router = async () => {
   footer.innerHTML = await Bottombar.render()
   await Bottombar.afterRender()
 
-
   let request = Utils.parseRequestURL()
 
-
-  let parsedURL = (request.resource ? '/' + request.resource : '/')
-   + (request.id ? '/:id' : '')
-   + (request.verb ? '/' + request.verb : '')
-
+  let parsedURL = request ? `/${request}` : '/'
 
   let page = routes[parsedURL] ? routes[parsedURL] : NotFound
   content.innerHTML = await page.render()
