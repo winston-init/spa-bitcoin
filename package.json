@@ -4,7 +4,7 @@
   "description": "SPA with ajax about Bitcoin",
   "main": "index.js",
   "scripts": {
-    "deploy": "gh-pages -d src"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -20,8 +20,5 @@
   "bugs": {
     "url": "https://github.com/winston-init/spa-bitcoin/issues"
   },
-  "homepage": "https://winston-init.github.io/spa-bitcoin",
-  "dependencies": {
-    "gh-pages": "^2.2.0"
-  }
+  "homepage": "https://github.com/winston-init/spa-bitcoin#readme"
 }
